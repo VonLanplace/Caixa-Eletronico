@@ -1,75 +1,78 @@
 package edu.fatec;
 
-import edu.fatec.service.CaixaEletronico;
+import edu.fatec.controller.CaixaEletronicoController;
 
-import java.util.Scanner;
+import javax.swing.*;
 
 public class App {
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        CaixaEletronico caixa = new CaixaEletronico();
+        CaixaEletronicoController controller = new CaixaEletronicoController();
 
         int opcao;
 
         do {
-
-            exibirMenu();
-
-            System.out.print("Escolha uma opção: ");
-
-            while (!scanner.hasNextInt()) {
-                System.out.print(
-                        "Digite uma opção válida: "
-                );
-                scanner.next();
-            }
-
-            opcao = scanner.nextInt();
+            opcao = exibirMenu();
 
             switch (opcao) {
 
                 case 1:
-                    caixa.carregarNotas();
+                    controller.carregarNotas();
                     break;
 
                 case 2:
-                    caixa.realizarSaque();
+                    controller.realizarSaque();
                     break;
 
                 case 3:
-                    caixa.estatistica();
+                    controller.estatistica();
+                    break;
+
+                case 4:
+                    controller.mostrarNotas();
                     break;
 
                 case 9:
-                    System.out.println(
-                            "\nSistema encerrado."
-                    );
+                    JOptionPane.showMessageDialog(null, "Sistema encerrado.");
+                    break;
+
+                case -1:
+                    // Usuário fechou/cancelou o diálogo do menu: encerra sem mensagem extra.
                     break;
 
                 default:
-                    System.out.println(
-                            "\nOpção inválida!"
-                    );
+                    JOptionPane.showMessageDialog(null, "Opção inválida!");
             }
 
-        } while (opcao != 9);
+        } while (opcao != 9 && opcao != -1);
 
-        scanner.close();
+        System.exit(0);
     }
 
-    private static void exibirMenu() {
+    private static int exibirMenu() {
 
-        System.out.println("\n");
-        System.out.println("==============================");
-        System.out.println("       CAIXA ELETRÔNICO");
-        System.out.println("==============================");
-        System.out.println("1 - Carregar Notas");
-        System.out.println("2 - Retirar Notas");
-        System.out.println("3 - Estatística");
-        System.out.println("9 - Fim");
-        System.out.println("==============================");
+        String menu =
+                "==============================\n" +
+                "       CAIXA ELETRÔNICO\n" +
+                "==============================\n" +
+                "1 - Carregar Notas\n" +
+                "2 - Retirar Notas\n" +
+                "3 - Estatística\n" +
+                "4 - Mostrar Notas\n" +
+                "9 - Fim\n" +
+                "==============================";
 
+        String entrada = JOptionPane.showInputDialog(menu, "Escolha uma opção:");
+
+        if (entrada == null) {
+            return -1; // usuário fechou o diálogo -> encerra o sistema
+        }
+
+        try {
+            return Integer.parseInt(entrada.trim());
+        } catch (NumberFormatException e) {
+            return -2; // cai no "default" do switch como opção inválida
+        }
     }
 }
