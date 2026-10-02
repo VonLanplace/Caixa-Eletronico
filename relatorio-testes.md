@@ -2,7 +2,7 @@
 
 ## 1. Informações do Projeto
 * **Nome do Projeto**: Caixa Eletrônico (Java / Maven / JUnit 5)
-* **Link do Projeto no GitHub**: [https://github.com/usuario/Caixa-Eletronico](https://github.com/usuario/Caixa-Eletronico) (Repositório de Exemplo / Pública)
+* **Link do Projeto no GitHub**: [https://github.com/VonLanplace/Caixa-Eletronico](https://github.com/VonLanplace/Caixa-Eletronico)
 * **Responsável**: Lucas Pereira de Mattos Sartorelli
 
 ---
