@@ -22,42 +22,38 @@ estatísticas dos saques separados por banco.
 │   │       └── edu
 │   │           └── fatec
 │   │               ├── App.java
+│   │               ├── controller
+│   │               │   └── CaixaEletronicoController.java
 │   │               ├── model
 │   │               │   ├── Banco.java
 │   │               │   ├── Cedula.java
 │   │               │   └── Saque.java
 │   │               └── service
-│   │                   └── CaixaEletronico.java
+│   │                   └── CaixaEletronicoService.java
 │   └── test
 │       └── java
 │           └── edu
 │               └── fatec
-│                   └── AppTest.java
-├── classes
-│   └── edu
-│       └── fatec
-│           ├── App.class
-│           ├── model
-│           │   ├── Banco.class
-│           │   ├── Cedula.class
-│           │   └── Saque.class
-│           └── service
-│               └── CaixaEletronico.class
-└── generated-sources
-└── annotations
+│                   ├── AppTest.java
+│                   ├── model
+│                   │   ├── BancoTest.java
+│                   │   └── CedulaTest.java
+│                   └── service
+│                       └── CaixaEletronicoServiceTest.java
 ```
 
 ## Funcionalidades
 
-O sistema possui o seguinte menu principal:
+O sistema possui interface gráfica baseada em Swing (`JOptionPane`) e o seguinte menu principal:
 
 ```
 ==============================
-CAIXA ELETRÔNICO
+       CAIXA ELETRÔNICO
 ==============================
 1 - Carregar Notas
 2 - Retirar Notas
 3 - Estatística
+4 - Mostrar Notas
 9 - Fim
 ==============================
 ```
@@ -205,7 +201,11 @@ Representa um banco e mantém os saques realizados por seus clientes.
 - Média dos saques;
 - Total sacado.
 
-### `service/CaixaEletronico.java`
+### `controller/CaixaEletronicoController.java`
+
+Camada de controle responsável pela interação com o usuário através de caixas de diálogo Swing (`JOptionPane`), validação de entradas e exibição de mensagens.
+
+### `service/CaixaEletronicoService.java`
 
 Contém a principal lógica de negócio do sistema.
 
