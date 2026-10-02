@@ -16,30 +16,30 @@ estatísticas dos saques separados por banco.
 ```
 .
 ├── pom.xml
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── edu
-│   │           └── fatec
-│   │               ├── App.java
-│   │               ├── controller
-│   │               │   └── CaixaEletronicoController.java
-│   │               ├── model
-│   │               │   ├── Banco.java
-│   │               │   ├── Cedula.java
-│   │               │   └── Saque.java
-│   │               └── service
-│   │                   └── CaixaEletronicoService.java
-│   └── test
-│       └── java
-│           └── edu
-│               └── fatec
-│                   ├── AppTest.java
-│                   ├── model
-│                   │   ├── BancoTest.java
-│                   │   └── CedulaTest.java
-│                   └── service
-│                       └── CaixaEletronicoServiceTest.java
+└── src
+    ├── main
+    │   └── java
+    │       └── edu
+    │           └── fatec
+    │               ├── App.java
+    │               ├── controller
+    │               │   └── CaixaEletronicoController.java
+    │               ├── model
+    │               │   ├── Banco.java
+    │               │   ├── Cedula.java
+    │               │   └── Saque.java
+    │               └── service
+    │                   └── CaixaEletronicoService.java
+    └── test
+        └── java
+            └── edu
+                └── fatec
+                    ├── AppTest.java
+                    ├── model
+                    │   ├── BancoTest.java
+                    │   └── CedulaTest.java
+                    └── service
+                        └── CaixaEletronicoServiceTest.java
 ```
 
 ## Funcionalidades
